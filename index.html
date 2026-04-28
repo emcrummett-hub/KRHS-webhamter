@@ -1,0 +1,342 @@
+
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fauquier County Community Resource Hub</title>
+  <meta name="description" content="Directory of non-profits, support services, programs, and events in Fauquier County, VA." />
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+
+  <!-- Structured Data for one highlighted LocalBusiness and an Event example -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {"@type":"WebSite","url":"https://example.org","name":"Fauquier County Community Resource Hub"},
+      {"@type":"LocalBusiness","name":"Fauquier Food Pantry","address":{"@type":"PostalAddress","addressLocality":"Warrenton","addressRegion":"VA"},"telephone":"+1-540-555-0101"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  
+
+
+<body class="navbar">
+
+<ul class="navbarul">
+  <li><a href="ref.html">References</a></li>
+  <li><a href="suggestions.html">Suggestions</a></li>
+  <li><a href="index.html">Home</a></li>
+</ul>
+
+
+</body>
+
+<!--
+<button class="button button1">View</button
+-->
+
+
+  <a class="skip" href="#main">Skip to main content</a>
+  <header>
+    <div class="container brand" role="banner">
+      <div class="logo" aria-hidden="true">FC</div>
+      <div>
+        <h1>Fauquier County Community Resource Hub</h1>
+        <p class="lead">Find local non-profits, support services, programs, and events across Fauquier County.</p>
+      </div>
+    </div>
+  </header>
+<!-- Slideshow -->
+<div class="slideshow-container">
+<div class="slides fade">
+  <img src="https://res-console.cloudinary.com/dkpcthobg/thumbnails/v1/image/upload/v1777328068/Y291bnRfMV9rOXB4cTU=/drilldown" style="width:100%">
+  <div class="text">Caption Text</div>
+</div>
+
+<div class="slides fade">
+  <img src="https://res-console.cloudinary.com/dkpcthobg/thumbnails/v1/image/upload/v1777328069/Y291bnRfM19pczMybnQ=/drilldown" style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="slides fade">
+  <img src="https://res-console.cloudinary.com/dkpcthobg/thumbnails/v1/image/upload/v1777328069/Y291bnRfMl9xcGkxY2c=/drilldown" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script type= "text/javascript" src="script.js"></script>
+<!------------------->
+  <main id="main" class="container" role="main">
+    <!-- Highlight Section -->
+    <section aria-labelledby="highlights" class="card" style="margin-bottom:1rem">
+      <h2 id="highlights">Highlights</h2>
+      <p class="meta">Spotlighted resources from the directory</p>
+      <div class="highlight-row" id="highlightRow" aria-live="polite"></div>
+    </section>
+
+    <div class="grid">
+      <!-- Left: Directory -->
+      <div>
+        <section class="card" aria-labelledby="searchTitle">
+          <h2 id="searchTitle">Search Directory</h2>
+          <div class="search-row" role="search" aria-label="Search resources">
+            <input id="searchInput" type="search" placeholder="Search by keyword, service, or town" aria-label="Search resources" />
+            <div class="sort-row">
+              <label for="sortSelect" class="visually-hidden">Sort by</label>
+              <select id="sortSelect" aria-label="Sort results">
+                <option value="relevance">Sort: Relevance</option>
+                <option value="newest">Sort: Newest</option>
+                <option value="upcoming">Sort: Upcoming events</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filters" aria-hidden="false" id="filters">
+            <label class="visually-hidden" for="categoryFilter">Category</label>
+            <select id="categoryFilter" aria-label="Filter by category">
+              <option value="">All categories</option>
+            </select>
+
+            <label class="visually-hidden" for="townFilter">Town</label>
+            <select id="townFilter" aria-label="Filter by town">
+              <option value="">All towns</option>
+            </select>
+
+            <label class="visually-hidden" for="audienceFilter">Audience</label>
+            <select id="audienceFilter" aria-label="Filter by audience">
+              <option value="">All audiences</option>
+              <option value="Families">Families</option>
+              <option value="Seniors">Seniors</option>
+              <option value="Youth">Youth</option>
+            </select>
+
+            <label class="visually-hidden" for="languageFilter">Language</label>
+            <select id="languageFilter" aria-label="Filter by language">
+              <option value="">Any language</option>
+              <option value="English">English</option>
+              <option value="Spanish">Spanish</option>
+            </select>
+
+            <label class="visually-hidden" for="dateFilter">Event date</label>
+            <input id="dateFilter" type="date" aria-label="Filter by event date" />
+          </div>
+
+          <div id="results" class="results" aria-live="polite"></div>
+          <div id="noResults" class="empty" hidden>No resources match your search.</div>
+        </section>
+
+        <!-- Resource detail modal (simple) -->
+        <div id="detailModal" class="card" role="dialog" aria-modal="true" aria-hidden="true" style="display:none;margin-top:1rem">
+          <button id="closeDetail" class="cta" style="background:#e2e8f0;color:#0b6efd">Close</button>
+          <div id="detailContent" style="margin-top:.75rem"></div>
+        </div>
+      </div>
+
+      <!-- Right: Sidebar -->
+      <aside class="sidebar">
+        <section class="card" aria-labelledby="submitTitle">
+          <h3 id="submitTitle">Suggest a Resource</h3>
+          <p class="meta">Add a new resource using the form below. Submissions are reviewed before publishing.</p>
+          <iframe title="Suggest a resource form" src="https://docs.google.com/forms/d/e/1FAIpQLSen1qCsOibWEckjtG_W7qhlLWphPLWsk9jWWes9sHTEvv5N8A/viewform?usp=headerembedded=true" width="100%" height="420" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </section>
+
+        <section class="card" style="margin-top:1rem" aria-labelledby="aboutTitle">
+          <h3 id="aboutTitle">About</h3>
+          <p class="meta">This hub is maintained by community volunteers. Contact <strong>Connor</strong> <i> <b> <u> connordpike09@gmail.com </u> </b> </i> in Warrenton for updates and/or questions.</p>
+          <p><a class="cta" href="#highlights">View Highlights</a></p>
+        </section>
+
+        <section class="card" style="margin-top:1rem" aria-labelledby="privacyTitle">
+          <h3 id="privacyTitle">Privacy</h3>
+          <p class="meta">We do not publish personal contact details without consent. Form submissions are stored in a Google Sheet and reviewed by admins.</p>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="container" role="contentinfo">
+    <p>© Fauquier County Community Resource Hub — Prototype. Built for community use.</p>
+  </footer>
+
+  <script>
+    // Seed data: 12 resources across categories. Each item: id,title,category,town,description,contact,language,cost,audience,date,eventFlag,highlight
+    const resources = [
+      {id:1,title:"Fauquier Food Pantry",category:"Non-profit",town:"Warrenton",description:"Weekly food distribution and emergency pantry.",contact:"540-555-0101",language:"English",cost:"Free",audience:"Families",date:"",event:false,highlight:true},
+      {id:2,title:"Warrenton Senior Center",category:"Support Service",town:"Warrenton",description:"Meals, social programs, transportation for seniors.",contact:"540-555-0202",language:"English",cost:"Low-cost",audience:"Seniors",date:"",event:false,highlight:true},
+      {id:3,title:"Youth After School Program",category:"Program",town:"Marshall",description:"Homework help and activities for ages 6-17.",contact:"540-555-0303",language:"English",cost:"Free",audience:"Youth",date:"",event:false,highlight:true},
+      {id:4,title:"Community Health Clinic",category:"Support Service",town:"Remington",description:"Sliding-scale primary care and immunizations.",contact:"540-555-0404",language:"English;Spanish",cost:"Sliding scale",audience:"All",date:"",event:false,highlight:true},
+      {id:5,title:"Fauquier Legal Aid",category:"Non-profit",town:"Warrenton",description:"Free legal help for low-income residents.",contact:"540-555-0505",language:"English",cost:"Free",audience:"All",date:"",event:false,highlight:false},
+      {id:6,title:"Community Garden Days",category:"Community Event",town:"New Baltimore",description:"Monthly volunteer garden and produce share.",contact:"540-555-0606",language:"English",cost:"Free",audience:"All",date:"2026-04-10",event:true,highlight:false},
+      {id:7,title:"Mental Health Support Group",category:"Support Service",town:"Warrenton",description:"Weekly peer-led support for adults.",contact:"540-555-0707",language:"English",cost:"Free",audience:"Adults",date:"",event:false,highlight:false},
+      {id:8,title:"Job Readiness Workshop",category:"Program",town:"Marshall",description:"Resume help and interview practice.",contact:"540-555-0808",language:"English",cost:"Free",audience:"Adults",date:"2026-05-05",event:true,highlight:false},
+      {id:9,title:"Veterans Resource Center",category:"Non-profit",town:"Warrenton",description:"Benefits navigation and peer support for veterans.",contact:"540-555-0909",language:"English",cost:"Free",audience:"Veterans",date:"",event:false,highlight:false},
+      {id:10,title:"Parenting Circle",category:"Program",town:"Remington",description:"Monthly parenting classes and playgroup.",contact:"540-555-1010",language:"English;Spanish",cost:"Low-cost",audience:"Families",date:"2026-04-20",event:true,highlight:false},
+      {id:11,title:"Transportation Assistance",category:"Support Service",town:"Warrenton",description:"Rides to medical appointments for seniors.",contact:"540-555-1111",language:"English",cost:"Donation",audience:"Seniors",date:"",event:false,highlight:false},
+      {id:12,title:"Community Arts Night",category:"Community Event",town:"Warrenton",description:"Local artists, music, and family activities.",contact:"540-555-1212",language:"English",cost:"Free",audience:"All",date:"2026-04-25",event:true,highlight:false}
+    ];
+
+    // Populate filters
+    const categoryFilter = document.getElementById('categoryFilter');
+    const townFilter = document.getElementById('townFilter');
+    const audienceFilter = document.getElementById('audienceFilter');
+    const languageFilter = document.getElementById('languageFilter');
+    const dateFilter = document.getElementById('dateFilter');
+    const searchInput = document.getElementById('searchInput');
+    const resultsEl = document.getElementById('results');
+    const noResults = document.getElementById('noResults');
+    const sortSelect = document.getElementById('sortSelect');
+    const highlightRow = document.getElementById('highlightRow');
+    const detailModal = document.getElementById('detailModal');
+    const detailContent = document.getElementById('detailContent');
+    const closeDetail = document.getElementById('closeDetail');
+
+    function uniqueValues(key){
+      return [...new Set(resources.map(r=>r[key]).filter(Boolean))].sort();
+    }
+    function populateSelect(sel, values){
+      values.forEach(v=>{
+        const opt=document.createElement('option'); opt.value=v; opt.textContent=v; sel.appendChild(opt);
+      });
+    }
+    populateSelect(categoryFilter, uniqueValues('category'));
+    populateSelect(townFilter, uniqueValues('town'));
+
+    // Render highlights
+    function renderHighlights(){
+      highlightRow.innerHTML='';
+      const highlights = resources.filter(r=>r.highlight).slice(0,6);
+      highlights.forEach(h=>{
+        const div=document.createElement('div'); div.className='card highlight';
+        div.innerHTML = `<strong>${h.title}</strong><p class="meta">${h.category} • ${h.town}</p><p style="margin:.5rem 0">${h.description}</p><p><a href="" class="button button1" data-id="${h.id}">View</a></p>`;
+        highlightRow.appendChild(div);
+      });
+    }
+
+    // Render results
+    function renderResults(list){
+      resultsEl.innerHTML='';
+      if(!list.length){ noResults.hidden=false; return; } else { noResults.hidden=true; }
+      list.forEach(r=>{
+        const div=document.createElement('div'); div.className='card resource';
+        div.innerHTML = `<div class="thumb" aria-hidden="true">${r.title.split(' ').slice(0,2).map(s=>s[0]).join('')}</div>
+          <div style="flex:1">
+            <div style="display:flex;justify-content:space-between;align-items:start">
+              <div>
+                <strong>${r.title}</strong>
+                <div class="meta">${r.category} • ${r.town} • <span class="tag">${r.cost}</span></div>
+              </div>
+              <div style="text-align:right">
+                ${r.event ? `<div class="meta">Event ${r.date}</div>` : ''}
+                <button class="button button1" data-id="${r.id}">Details</button> 
+              </div>
+            </div>
+            <p style="margin:.5rem 0" class="meta">${r.description}</p>
+            <div class="meta">Contact: <a href="tel:${r.contact}">${r.contact}</a> • ${r.language}</div>
+          </div>`;
+        resultsEl.appendChild(div);
+      });
+    }
+
+    // Filtering logic
+    function filterAndSort(){
+      const q = searchInput.value.trim().toLowerCase();
+      const cat = categoryFilter.value;
+      const town = townFilter.value;
+      const aud = audienceFilter.value;
+      const lang = languageFilter.value;
+      const date = dateFilter.value;
+      let list = resources.filter(r=>{
+        // text match
+        const text = (r.title+' '+r.description+' '+r.category+' '+r.town+' '+r.language).toLowerCase();
+        const textMatch = q ? text.includes(q) : true;
+        const catMatch = cat ? r.category===cat : true;
+        const townMatch = town ? r.town===town : true;
+        const audMatch = aud ? r.audience===aud : true;
+        const langMatch = lang ? r.language.includes(lang) : true;
+        const dateMatch = date ? (r.event && r.date===date) : true;
+        return textMatch && catMatch && townMatch && audMatch && langMatch && dateMatch;
+      });
+
+      // sort
+      const sort = sortSelect.value;
+      if(sort==='newest'){ list = list.slice().reverse(); }
+      if(sort==='upcoming'){ list = list.slice().filter(r=>r.event).sort((a,b)=> (a.date||'').localeCompare(b.date||'')); }
+
+      renderResults(list);
+    }
+
+    // Event delegation for details
+    resultsEl.addEventListener('click', e=>{
+      const btn = e.target.closest('button');
+      if(!btn) return;
+      const id = Number(btn.dataset.id);
+      openDetail(id);
+    });
+    highlightRow.addEventListener('click', e=>{
+      const a = e.target.closest('a');
+      if(!a) return;
+      const id = Number(a.dataset.id);
+      openDetail(id);
+      e.preventDefault();
+    });
+
+    function openDetail(id){
+      const r = resources.find(x=>x.id===id);
+      if(!r) return;
+      detailContent.innerHTML = `
+        <h3>${r.title}</h3>
+        <p class="meta">${r.category} • ${r.town} • ${r.cost}</p>
+        <p>${r.description}</p>
+        <p class="meta">Contact: <a href="tel:${r.contact}">${r.contact}</a></p>
+        ${r.event ? `<p class="meta">Event date: ${r.date}</p>` : ''}
+        <div style="margin-top:.5rem">
+          <a class="cta" href="https://www.google.com/maps/search/${encodeURIComponent(r.town+' '+r.title)}" target="_blank" rel="noopener">Open map</a>
+          <a class="cta" style="background:#10b981;margin-left:.5rem" href="mailto:?subject=${encodeURIComponent('Resource: '+r.title)}&body=${encodeURIComponent(r.title+' - '+r.description)}">Share</a>
+        </div>
+      `;
+      detailModal.style.display='block';
+      detailModal.setAttribute('aria-hidden','false');
+      detailModal.scrollIntoView({behavior:'smooth'});
+    }
+    closeDetail.addEventListener('click', ()=>{
+      detailModal.style.display='none';
+      detailModal.setAttribute('aria-hidden','true');
+    });
+
+    // Wire inputs
+    [searchInput,categoryFilter,townFilter,audienceFilter,languageFilter,dateFilter,sortSelect].forEach(el=>{
+      el.addEventListener('input', filterAndSort);
+      el.addEventListener('change', filterAndSort);
+    });
+
+    // Initial render
+    renderHighlights();
+    filterAndSort();
+
+    // Accessibility: keyboard focus for results
+    document.addEventListener('keydown', e=>{
+      if(e.key==='/' && document.activeElement.tagName!=='INPUT'){ e.preventDefault(); searchInput.focus(); }
+      if(e.key==='Escape'){ detailModal.style.display='none'; detailModal.setAttribute('aria-hidden','true'); }
+    });
+
+    // Simple analytics placeholder (replace with GA snippet if desired)
+    console.log('Prototype loaded: Fauquier County Resource Hub');
+
+    // NOTE: For admin workflow, connect the Google Form responses sheet to a simple review process.
+  </script>
+</body>
+</html>
+
+
